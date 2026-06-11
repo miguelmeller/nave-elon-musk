@@ -31,12 +31,19 @@ def registrarTripulante():
     tripulantes.append(novoTripulante) ##Inserimos o fulano
     print("Tripulante inserido com sucesso! 🚀")
 
-
+def tirarTripulante():
+    ##Tira o tripulante
+    
+    if len(tripulantes) == 0:
+        print("Não há tripulantes na nave")
+    else:
+        tripulantes.pop()
+        print("Tripulante removido")
 ##Criar um menu
 
 while True: ##Esse loop roda para sempre!
     print("\nBem vindo ao menu interativo da nave. Por favor selecione uma opção: ")
-    print("\n1- Mostrar status da nave | 2- Viajar | 3- Abastecer | 4- Novo tripulante | 5- Sair")
+    print("\n1- Mostrar status da nave | 2- Viajar | 3- Abastecer | 4- Novo tripulante | 5-Tirar tripulante | 6- Sair")
     opcao = input("Escolha: ")
     if (opcao == "1"):
         status_nave()
@@ -46,6 +53,8 @@ while True: ##Esse loop roda para sempre!
         abastecer()
     elif (opcao == "4"):
         registrarTripulante()
+    elif (opcao == "5"):
+        tirarTripulante()
     else:
         print("Viagem encerrada!")
         break
